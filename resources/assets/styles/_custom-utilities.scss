@@ -1,0 +1,69 @@
+.bg-white-10 {
+  background-color: rgba(#fff, 0.1);
+}
+
+.tracking-wider {
+  letter-spacing: 0.08rem;
+}
+
+.focus-none:focus {
+  outline: none;
+}
+
+.list-none {
+  list-style-type: none;
+}
+
+.nudge-t {
+  top: 1px;
+}
+
+.nudge-r {
+  right: 1px;
+}
+
+.nudge-b {
+  bottom: 1px;
+}
+
+.nudge-l {
+  left: 1px;
+}
+
+.transition-bg {
+  transition: background-color 150ms ease;
+}
+
+.transition-color {
+  transition: color 150ms ease;
+}
+
+.transition-border-color {
+  transition: border-color 150ms ease;
+}
+
+.transition-color-bg {
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.transition-color-bg-border {
+  transition: background-color 150ms ease, color 150ms ease,
+    border-color 150ms ease;
+}
+
+.transition-stroke {
+  transition: stroke 150ms ease;
+}
+
+.transition-opacity {
+  transition: opacity 150ms ease;
+}
+
+[disabled] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.indent-px {
+  text-indent: 1px;
+}

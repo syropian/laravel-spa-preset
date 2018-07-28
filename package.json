@@ -1,0 +1,64 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "lint": "eslint resources/assets/js --ext='.js,.vue'",
+    "lint:fix": "eslint resources/assets/js --ext='.js,.vue' --fix"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/resources/assets/js/__tests__/utils/"
+    ],
+    "transform": {
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/resources/assets/js/$1"
+    }
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^1.0.0-beta.21",
+    "babel-eslint": "^8.2.6",
+    "babel-jest": "^23.4.2",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.2.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "eslint-plugin-vue": "^4.7.1",
+    "flush-promises": "^1.0.0",
+    "jest": "^23.4.2",
+    "laravel-mix": "^2.1.11",
+    "laravel-mix-purgecss": "^2.2.0",
+    "tailwindcss": "^0.6.4",
+    "vue-eslint-parser": "^3.2.2",
+    "vue-jest": "^2.6.0"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "es6-promise": "^4.2.4",
+    "local-storage": "^1.4.2",
+    "vue": "^2.5.16",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  }
+}

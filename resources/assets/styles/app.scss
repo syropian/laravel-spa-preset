@@ -1,0 +1,18 @@
+@tailwind preflight;
+@import "components";
+@tailwind utilities;
+
+html,
+body {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+}
+body {
+  background: config("colors.brand");
+  font-family: config("fonts.sans");
+  min-height: 100vh;
+}
+
+@import "animations";
+@import "custom-utilities";
