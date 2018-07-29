@@ -8,6 +8,7 @@ My personal and opinionated boilerplate for building SPAs with Laravel, Vue, and
 - Client-side code-splitted routes and views for login, registration, and email confirmation.
 - Vuex store with user module.
 - Tailwind for styling.
+- More tests.
 
 ### TODO:
 
