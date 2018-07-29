@@ -16,6 +16,6 @@ class UserConfirmationController extends Controller
 
         $user->confirm();
 
-        return redirect('/?email_confirmed=true');
+        return redirect('/email-confirmed');
     }
 }

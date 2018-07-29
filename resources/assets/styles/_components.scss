@@ -26,6 +26,12 @@
     @apply border-grey;
     outline: none;
   }
+  &.text-input-primary {
+    &:focus {
+      @apply border-blue;
+      outline: none;
+    }
+  }
 }
 
 .dropdown {
