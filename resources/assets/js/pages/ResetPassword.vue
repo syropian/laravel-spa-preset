@@ -13,7 +13,7 @@
 
           <button
             type="submit"
-            class="btn btn-primary w-full h-10">Reset Password</button>
+            class="btn btn-primary w-full h-10">Send Reset Instructions</button>
         </form>
       </div>
       <div v-else>
@@ -25,7 +25,7 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-  name: 'Login',
+  name: 'ResetPassword',
   data () {
     return {
       resetRequested: false,

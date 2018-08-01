@@ -44,10 +44,10 @@ export default {
   data () {
     return {
       user: {
-        name: 'Collin Henderson',
-        email: 'collin@syropia.net',
-        password: 'password',
-        password_confirmation: 'password'
+        name: '',
+        email: '',
+        password: '',
+        password_confirmation: ''
       },
       errors: []
     }

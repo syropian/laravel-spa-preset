@@ -30,7 +30,7 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-  name: 'Login',
+  name: 'NewPassword',
   data () {
     return {
       successfullyReset: false,

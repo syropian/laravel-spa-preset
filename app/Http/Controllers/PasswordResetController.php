@@ -49,7 +49,7 @@ class PasswordResetController extends Controller
         $user->password = request('password');
         $user->save();
 
-        $resetEntry->delete();
+        DB::table('password_resets')->where('token', request('token'))->delete();
 
         return response()->json([], 200);
     }
