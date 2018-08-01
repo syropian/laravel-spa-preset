@@ -14,6 +14,11 @@
           class="text-input text-input-primary w-full mb-4"
           type="password"
           placeholder="Password">
+        <p class="flex mb-4">
+          <router-link
+            :to="{ name: 'ResetPassword' }"
+            class="ml-auto text-xs text-blue font-bold no-underline">Forgot Password?</router-link>
+        </p>
         <button
           type="submit"
           class="btn btn-primary w-full h-10">Sign In</button>

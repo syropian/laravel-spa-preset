@@ -49,6 +49,14 @@ const actions = {
       .then(res => {
         commit(SET_USER, res)
       })
+  },
+  requestPasswordReset (__ctx, email) {
+    return client.withoutAuth().post('/api/auth/request-password-reset', email)
+  },
+  resetPassword (__ctx, password) {
+    return client
+      .withoutAuth()
+      .put('/api/auth/request-password-reset', password)
   }
 }
 

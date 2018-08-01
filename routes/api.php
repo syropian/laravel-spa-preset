@@ -18,6 +18,9 @@ Route::post('auth/login', 'AuthController@login');
 Route::get('auth/refresh', 'AuthController@refresh');
 Route::get('auth/logout', 'AuthController@logout');
 Route::delete('auth/delete', 'AuthController@destroy');
+Route::post('/auth/request-password-reset', 'PasswordResetController@store')
+    ->middleware('throttle:1,5');
+Route::put('/auth/request-password-reset', 'PasswordResetController@update');
 
 Route::post('users', 'UserController@store');
 Route::get('/users/confirm', 'UserConfirmationController');

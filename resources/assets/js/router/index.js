@@ -8,6 +8,8 @@ const Login = () => import('@/pages/Login')
 const Register = () => import('@/pages/Register')
 const ConfirmEmail = () => import('@/pages/ConfirmEmail')
 const EmailConfirmed = () => import('@/pages/EmailConfirmed')
+const ResetPassword = () => import('@/pages/ResetPassword')
+const NewPassword = () => import('@/pages/NewPassword')
 const Dashboard = () => import('@/pages/Dashboard')
 
 Vue.use(Router)
@@ -70,6 +72,16 @@ const router = new Router({
         ls.clear()
         next('login')
       }
+    },
+    {
+      path: '/reset-password',
+      name: 'ResetPassword',
+      component: ResetPassword
+    },
+    {
+      path: '/new-password',
+      name: 'NewPassword',
+      component: NewPassword
     },
     {
       path: '/index',
