@@ -12,5 +12,4 @@ My personal and opinionated boilerplate for building SPAs with Laravel, Vue, and
 
 ### TODO:
 
-- [ ] General error handling.
 - [ ] More tests
