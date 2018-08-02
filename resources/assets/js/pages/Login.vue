@@ -2,6 +2,10 @@
   <div class="h-screen w-screen bg-blue flex flex-col justify-center items-center px-4">
     <h2 class="text-white mb-4">Welcome to MyApp!</h2>
     <div class="bg-white rounded shadow-lg overflow-hidden max-w-sm p-8">
+      <div
+        v-if="error"
+        class="bg-red text-white rounded mb-4 text-sm p-2"
+      >{{ error }}</div>
       <form @submit.prevent="loginUser">
         <input
           v-model="user.email"
@@ -20,6 +24,7 @@
             class="ml-auto text-xs text-blue font-bold no-underline">Forgot Password?</router-link>
         </p>
         <button
+          :disabled="submitDisabled"
           type="submit"
           class="btn btn-primary w-full h-10">Sign In</button>
       </form>
@@ -39,15 +44,25 @@ export default {
         email: '',
         password: ''
       },
-      errors: []
+      error: ''
+    }
+  },
+  computed: {
+    submitDisabled () {
+      return Object.keys(this.user).some(field => this.user[field].trim() === '')
     }
   },
   methods: {
     ...mapActions(['login']),
-    loginUser () {
-      this.login(this.user).then(() => {
+    async loginUser () {
+      try {
+        await this.login(this.user)
+        this.error = ''
         this.$router.push({ name: 'Dashboard' })
-      })
+      } catch (e) {
+        this.error = 'Unable to sign in with the provided credentials'
+      }
+
     }
   }
 }

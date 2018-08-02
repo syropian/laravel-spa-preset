@@ -14,6 +14,11 @@ class PasswordResetController extends Controller
     public function store()
     {
         $email = request('email');
+
+        if (!User::where('email', $email)->exists()) {
+            return response()->json(['error' => 'There is no account in our system associated with the email address "' . $email . '".'], 403);
+        }
+
         $token = str_limit(md5($email . str_random()), 32, '');
 
         DB::table('password_resets')->insert(
@@ -31,11 +36,12 @@ class PasswordResetController extends Controller
     public function update()
     {
         $validatedData = request()->validate([
-            'token' => 'required',
-            'password' => 'required|confirmed',
+            'token' => 'bail|required',
+            'password' => 'bail|required|confirmed',
         ]);
 
         $resetEntry = DB::table('password_resets')->where('token', request('token'))->first();
+
         if (!$resetEntry) {
             return response()->json(['error' => 'No reset request found for this email'], 403);
         }
