@@ -13,3 +13,4 @@ My personal and opinionated boilerplate for building SPAs with Laravel, Vue, and
 ### TODO:
 
 - [ ] More tests
+- [ ] Documentation for key features
